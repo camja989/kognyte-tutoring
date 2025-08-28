@@ -1,268 +1,218 @@
-'use client'
-
-// useState removed - not used
 import Link from 'next/link'
-import { ArrowRight, BookOpen, Users, Trophy, CheckCircle, Target, Zap } from 'lucide-react'
+import { ArrowRight, CheckCircle, Users, BookOpen, TrendingUp, Clock, Award, ExternalLink } from 'lucide-react'
 
 export default function HomePage() {
-
-  const stats = [
-    { label: 'HSFY Students Helped', value: '500+' },
-    { label: 'Success Rate', value: '94%' },
-    { label: 'MCQ Questions', value: '10K+' },
-    { label: 'Expert Tutors', value: '50+' }
-  ]
-
-  const features = [
-    {
-      icon: <BookOpen className="h-8 w-8 text-blue-600" />,
-      title: 'MCQ Question Banks',
-      description: 'Comprehensive question banks for all HSFY papers at University of Otago'
-    },
-    {
-      icon: <Users className="h-8 w-8 text-green-600" />,
-      title: 'Expert Tutoring',
-      description: 'One-on-one sessions with top-performing health science students'
-    },
-    {
-      icon: <Trophy className="h-8 w-8 text-yellow-600" />,
-      title: 'Compete & Learn',
-      description: 'Challenge friends and climb leaderboards while studying'
-    },
-    {
-      icon: <Target className="h-8 w-8 text-purple-600" />,
-      title: 'Targeted Learning',
-      description: 'Focus on your weak areas with AI-powered recommendations'
-    }
-  ]
-
-  const subjects = [
-    'PHSI191 - Human Body Systems',
-    'CHEM191 - Molecular Science',
-    'BCHM191 - Biological Chemistry',
-    'PHSI192 - Cellular Physiology',
-    'CHEM192 - Chemical Reactions',
-    'BCHM192 - Biochemical Processes'
-  ]
-
-  const pricing = [
-    {
-      name: 'Single Subject',
-      price: '$19.99',
-      original: '$29.99',
-      features: ['1 MCQ Question Bank', '500+ Questions', '30 Days Access', 'Progress Tracking']
-    },
-    {
-      name: 'HSFY Complete',
-      price: '$89.99',
-      original: '$179.99',
-      popular: true,
-      features: ['All 6 Subject Banks', '3000+ Questions', '1 Year Access', 'Priority Support', 'Leaderboards', 'Study Groups']
-    },
-    {
-      name: 'Premium + Tutoring',
-      price: '$199.99',
-      original: '$299.99',
-      features: ['Everything in Complete', '4 Private Tutoring Sessions', 'Custom Study Plans', 'Exam Prep Sessions']
-    }
-  ]
-
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav className="bg-white shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+          <div className="flex justify-between items-center py-4">
             <div className="flex items-center">
-              <Zap className="h-8 w-8 text-blue-600" />
-              <span className="ml-2 text-2xl font-bold text-gray-900">JoltVolt</span>
+              <div className="text-2xl font-bold text-blue-600">JoltVolt</div>
             </div>
-            
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-4">
-                <Link href="#features" className="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">Features</Link>
-                <Link href="#pricing" className="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">Pricing</Link>
-                <Link href="/demo" className="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">Careers</Link>
-                <Link href="/login" className="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">Login</Link>
-                <Link href="/signup" className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700">
-                  Try Free Demo
-                </Link>
-              </div>
+            <div className="hidden md:flex items-center space-x-8">
+              <Link href="#features" className="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">Features</Link>
+              <Link href="/pricing" className="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">Pricing</Link>
+              <Link href="/careers" className="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">Careers</Link>
+              <Link href="/apply" className="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">Apply</Link>
+              <Link href="/login" className="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">Login</Link>
+              <Link href="/login" className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700">
+                Try Free Demo
+              </Link>
             </div>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-50 to-indigo-100 pt-16 pb-20">
+      <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Ace Your <span className="text-blue-600">HSFY</span> at Otago
+            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+              Master HSFY with
+              <span className="text-blue-600"> Expert Questions</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              The smartest way to study Health Sciences First Year. Get access to premium MCQ banks, 
-              expert tutoring, and compete with peers. Better than LearnQuick, at half the price.
+              Join thousands of University of Otago students who are acing their Health Sciences First Year 
+              with our comprehensive question banks and detailed explanations.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/signup" className="bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 flex items-center justify-center">
-                Start Free Trial <ArrowRight className="ml-2 h-5 w-5" />
+              <Link 
+                href="/login" 
+                className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors inline-flex items-center justify-center"
+              >
+                <BookOpen className="mr-2 h-6 w-6" />
+                Start Free Trial
               </Link>
-              <Link href="#demo" className="border border-blue-600 text-blue-600 px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-50">
-                See Demo
+              <Link 
+                href="/pricing" 
+                className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-50 transition-colors inline-flex items-center justify-center"
+              >
+                View Pricing
+                <ArrowRight className="ml-2 h-6 w-6" />
               </Link>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl font-bold text-blue-600">{stat.value}</div>
-                <div className="text-gray-600 mt-2">{stat.label}</div>
-              </div>
-            ))}
+            <div className="mt-8 text-center">
+              <p className="text-gray-500 text-sm">✅ No credit card required • ✅ Instant access • ✅ University approved</p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-20 bg-gray-50">
+      <section id="features" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Why Choose JoltVolt?</h2>
-            <p className="text-xl text-gray-600">Everything you need to excel in HSFY</p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                <div className="mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Subject Coverage */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Complete HSFY Coverage</h2>
-            <p className="text-xl text-gray-600">All the subjects you need to master</p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {subjects.map((subject, index) => (
-              <div key={index} className="border border-gray-200 rounded-lg p-6 hover:border-blue-300 transition-colors">
-                <CheckCircle className="h-6 w-6 text-green-500 mb-3" />
-                <h3 className="font-semibold text-gray-900">{subject}</h3>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section id="pricing" className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Simple, Affordable Pricing</h2>
-            <p className="text-xl text-gray-600">Better than LearnQuick, at half the cost</p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose JoltVolt?</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Our platform is specifically designed for HSFY students, with content created by top-performing graduates and current tutors.
+            </p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            {pricing.map((plan, index) => (
-              <div key={index} className={`bg-white rounded-lg shadow-lg p-8 ${plan.popular ? 'ring-2 ring-blue-500 relative' : ''}`}>
-                {plan.popular && (
-                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                    <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">Most Popular</span>
-                  </div>
-                )}
-                <div className="text-center">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{plan.name}</h3>
-                  <div className="mb-4">
-                    <span className="text-4xl font-bold text-blue-600">{plan.price}</span>
-                    <span className="text-gray-500 line-through ml-2">{plan.original}</span>
-                  </div>
-                  <ul className="space-y-3 mb-8">
-                    {plan.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center">
-                        <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
-                        <span className="text-gray-600">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <button className={`w-full py-3 rounded-lg font-semibold ${
-                    plan.popular ? 'bg-blue-600 text-white hover:bg-blue-700' : 'border border-blue-600 text-blue-600 hover:bg-blue-50'
-                  }`}>
-                    Try Free Demo
-                  </button>
-                </div>
+            <div className="text-center p-8 rounded-2xl bg-blue-50 border border-blue-100">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-600 text-white rounded-full mb-6">
+                <BookOpen className="h-8 w-8" />
               </div>
-            ))}
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Subject-Specific Banks</h3>
+              <p className="text-gray-600">
+                Comprehensive question collections for BIOL111, CHEM111, PHSI111, and HSCI111 
+                with detailed explanations for every answer.
+              </p>
+            </div>
+            
+            <div className="text-center p-8 rounded-2xl bg-green-50 border border-green-100">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-green-600 text-white rounded-full mb-6">
+                <TrendingUp className="h-8 w-8" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Track Your Progress</h3>
+              <p className="text-gray-600">
+                Monitor your improvement across all subjects with detailed analytics 
+                and performance insights that help identify weak areas.
+              </p>
+            </div>
+            
+            <div className="text-center p-8 rounded-2xl bg-purple-50 border border-purple-100">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-purple-600 text-white rounded-full mb-6">
+                <Users className="h-8 w-8" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Expert Tutors</h3>
+              <p className="text-gray-600">
+                Content created by University of Otago graduates who achieved A+ grades 
+                in HSFY and current top-performing students.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-blue-600">
+      {/* Moodle Integration Section */}
+      <section className="py-16 bg-gradient-to-r from-blue-600 to-indigo-700">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center text-white">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-white bg-opacity-20 rounded-full mb-6">
+              <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+              </svg>
+            </div>
+            <h2 className="text-3xl font-bold mb-4">Seamless Moodle Integration</h2>
+            <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+              Access JoltVolt directly from your University of Otago Moodle course. 
+              No separate login required - grades sync automatically to your gradebook.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link 
+                href="/login" 
+                className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors inline-flex items-center justify-center"
+              >
+                <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
+                </svg>
+                Try Moodle Integration
+              </Link>
+              <a 
+                href="/MOODLE_INTEGRATION.md" 
+                className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors inline-flex items-center justify-center"
+                target="_blank"
+              >
+                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                Integration Guide
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to Excel in HSFY?</h2>
-          <p className="text-xl text-blue-100 mb-8">Join thousands of successful Otago students</p>
-          <Link href="/signup" className="bg-white text-blue-600 px-8 py-3 rounded-lg text-lg font-semibold hover:bg-gray-100 inline-flex items-center">
-            Start Your Free Trial <ArrowRight className="ml-2 h-5 w-5" />
-          </Link>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">Ready to Excel in HSFY?</h2>
+          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            Join the thousands of students already using JoltVolt to master their Health Sciences studies. 
+            Start your free trial today and see the difference quality questions make.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link 
+              href="/login" 
+              className="bg-blue-600 text-white px-12 py-4 rounded-lg text-xl font-semibold hover:bg-blue-700 transition-colors inline-flex items-center justify-center"
+            >
+              <ExternalLink className="mr-3 h-6 w-6" />
+              Access Learning Platform
+            </Link>
+            <Link 
+              href="/careers" 
+              className="border-2 border-gray-300 text-gray-700 px-12 py-4 rounded-lg text-xl font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-center"
+            >
+              <Users className="mr-3 h-6 w-6" />
+              Become a Tutor
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
+      <footer className="bg-gray-900 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <div className="flex items-center mb-4">
-                <Zap className="h-8 w-8 text-blue-400" />
-                <span className="ml-2 text-2xl font-bold">JoltVolt</span>
-              </div>
-              <p className="text-gray-400">Empowering HSFY students at University of Otago to achieve their dreams.</p>
+              <div className="text-2xl font-bold text-blue-400 mb-4">JoltVolt</div>
+              <p className="text-gray-400 mb-4">
+                Empowering HSFY students at the University of Otago with expert-crafted practice questions.
+              </p>
             </div>
+            
             <div>
-              <h3 className="text-lg font-semibold mb-4">Product</h3>
+              <h3 className="text-lg font-semibold mb-4">Platform</h3>
               <ul className="space-y-2 text-gray-400">
-                <li><Link href="/features">Features</Link></li>
-                <li><Link href="/pricing">Pricing</Link></li>
-                <li><Link href="/demo">Demo</Link></li>
-                <li><Link href="/api">API</Link></li>
+                <li><Link href="/login" className="hover:text-white transition-colors">Access Courses</Link></li>
+                <li><Link href="/pricing" className="hover:text-white transition-colors">Pricing</Link></li>
+                <li><Link href="/demo" className="hover:text-white transition-colors">Free Demo</Link></li>
               </ul>
             </div>
+            
             <div>
-              <h3 className="text-lg font-semibold mb-4">Company</h3>
+              <h3 className="text-lg font-semibold mb-4">Join Us</h3>
               <ul className="space-y-2 text-gray-400">
-                <li><Link href="/about">About</Link></li>
-                <li><Link href="/demo">Careers</Link></li>
-                <li><Link href="/blog">Blog</Link></li>
-                <li><Link href="/contact">Contact</Link></li>
+                <li><Link href="/careers" className="hover:text-white transition-colors">Become a Tutor</Link></li>
+                <li><Link href="/apply" className="hover:text-white transition-colors">Apply Now</Link></li>
               </ul>
             </div>
+            
             <div>
               <h3 className="text-lg font-semibold mb-4">Support</h3>
               <ul className="space-y-2 text-gray-400">
-                <li><Link href="/help">Help Center</Link></li>
-                <li><Link href="/privacy">Privacy</Link></li>
-                <li><Link href="/terms">Terms</Link></li>
-                <li><Link href="/security">Security</Link></li>
+                <li><a href="mailto:support@joltvolt.com" className="hover:text-white transition-colors">Contact Us</a></li>
+                <li><Link href="/terms" className="hover:text-white transition-colors">Terms</Link></li>
+                <li><Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link></li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-gray-800 pt-8 mt-8 text-center text-gray-400">
-            <p>&copy; 2025 JoltVolt. All rights reserved. Helping Otago HSFY students succeed.</p>
+          
+          <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+            <p>&copy; 2024 JoltVolt. All rights reserved. Designed for University of Otago HSFY students.</p>
           </div>
         </div>
       </footer>
