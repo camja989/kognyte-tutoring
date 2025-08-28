@@ -116,14 +116,27 @@ export default function LTIQuestionPage() {
   // Parse LTI session on component mount
   useEffect(() => {
     if (ltiSessionToken) {
-      try {
-        const sessionData = JSON.parse(Buffer.from(ltiSessionToken, 'base64url').toString())
-        setSession(sessionData)
-      } catch (error) {
-        console.error('Error parsing LTI session:', error)
+      if (ltiSessionToken === 'demo_session') {
+        // Demo session for testing
+        setSession({
+          userId: 'demo_student',
+          roles: ['Learner'],
+          resourceLinkId: 'demo_resource',
+          contextId: 'demo_context',
+          consumerKey: 'demo_consumer',
+          subject: subject,
+          sessionId: 'demo_session'
+        })
+      } else {
+        try {
+          const sessionData = JSON.parse(Buffer.from(ltiSessionToken, 'base64url').toString())
+          setSession(sessionData)
+        } catch (error) {
+          console.error('Error parsing LTI session:', error)
+        }
       }
     }
-  }, [ltiSessionToken])
+  }, [ltiSessionToken, subject])
 
   // Load questions for the subject
   useEffect(() => {
