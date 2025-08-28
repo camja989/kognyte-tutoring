@@ -82,10 +82,10 @@ export default function HomePage() {
               <div className="ml-10 flex items-baseline space-x-4">
                 <Link href="#features" className="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">Features</Link>
                 <Link href="#pricing" className="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">Pricing</Link>
-                <Link href="/careers" className="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">Careers</Link>
+                <Link href="/demo" className="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">Careers</Link>
                 <Link href="/login" className="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">Login</Link>
                 <Link href="/signup" className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700">
-                  Get Started
+                  Try Free Demo
                 </Link>
               </div>
             </div>
@@ -202,7 +202,7 @@ export default function HomePage() {
                   <button className={`w-full py-3 rounded-lg font-semibold ${
                     plan.popular ? 'bg-blue-600 text-white hover:bg-blue-700' : 'border border-blue-600 text-blue-600 hover:bg-blue-50'
                   }`}>
-                    Get Started
+                    Try Free Demo
                   </button>
                 </div>
               </div>
@@ -246,7 +246,7 @@ export default function HomePage() {
               <h3 className="text-lg font-semibold mb-4">Company</h3>
               <ul className="space-y-2 text-gray-400">
                 <li><Link href="/about">About</Link></li>
-                <li><Link href="/careers">Careers</Link></li>
+                <li><Link href="/demo">Careers</Link></li>
                 <li><Link href="/blog">Blog</Link></li>
                 <li><Link href="/contact">Contact</Link></li>
               </ul>

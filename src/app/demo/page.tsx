@@ -1,0 +1,342 @@
+'use client'
+
+import { useState } from 'react'
+import Link from 'next/link'
+import { ArrowRight, CheckCircle, XCircle, RotateCcw, BookOpen, Clock, Target } from 'lucide-react'
+
+interface Question {
+  id: number
+  subject: string
+  topic: string
+  question: string
+  options: string[]
+  correctAnswer: number
+  explanation: string
+  difficulty: 'Easy' | 'Medium' | 'Hard'
+}
+
+const demoQuestions: Question[] = [
+  {
+    id: 1,
+    subject: 'Biology',
+    topic: 'Cell Biology',
+    question: 'Which of the following organelles is responsible for protein synthesis?',
+    options: [
+      'Mitochondria',
+      'Ribosomes',
+      'Lysosomes',
+      'Golgi apparatus'
+    ],
+    correctAnswer: 1,
+    explanation: 'Ribosomes are the cellular organelles responsible for protein synthesis. They translate mRNA into proteins by linking amino acids together.',
+    difficulty: 'Easy'
+  },
+  {
+    id: 2,
+    subject: 'Chemistry',
+    topic: 'Organic Chemistry',
+    question: 'What is the molecular formula for glucose?',
+    options: [
+      'C₆H₁₂O₆',
+      'C₆H₁₀O₅',
+      'C₅H₁₀O₅',
+      'C₆H₁₄O₆'
+    ],
+    correctAnswer: 0,
+    explanation: 'Glucose has the molecular formula C₆H₁₂O₆. It is a simple sugar and an important energy source for living organisms.',
+    difficulty: 'Easy'
+  },
+  {
+    id: 3,
+    subject: 'Physics',
+    topic: 'Mechanics',
+    question: 'If an object is dropped from rest and falls for 3 seconds (ignoring air resistance), what is its final velocity? (g = 9.8 m/s²)',
+    options: [
+      '9.8 m/s',
+      '19.6 m/s',
+      '29.4 m/s',
+      '39.2 m/s'
+    ],
+    correctAnswer: 2,
+    explanation: 'Using the equation v = gt, where g = 9.8 m/s² and t = 3s, the final velocity is 9.8 × 3 = 29.4 m/s.',
+    difficulty: 'Medium'
+  },
+  {
+    id: 4,
+    subject: 'Chemistry',
+    topic: 'Atomic Structure',
+    question: 'How many electrons can the third electron shell (n=3) hold at maximum?',
+    options: [
+      '8 electrons',
+      '18 electrons',
+      '32 electrons',
+      '2 electrons'
+    ],
+    correctAnswer: 1,
+    explanation: 'The maximum number of electrons in a shell is given by 2n². For n=3: 2(3)² = 2 × 9 = 18 electrons.',
+    difficulty: 'Medium'
+  },
+  {
+    id: 5,
+    subject: 'Biology',
+    topic: 'Human Physiology',
+    question: 'Which chamber of the heart receives oxygenated blood from the lungs?',
+    options: [
+      'Right atrium',
+      'Right ventricle',
+      'Left atrium',
+      'Left ventricle'
+    ],
+    correctAnswer: 2,
+    explanation: 'The left atrium receives oxygenated blood from the lungs via the pulmonary veins, then pumps it to the left ventricle.',
+    difficulty: 'Easy'
+  }
+]
+
+export default function DemoPage() {
+  const [currentQuestion, setCurrentQuestion] = useState(0)
+  const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null)
+  const [showExplanation, setShowExplanation] = useState(false)
+  const [score, setScore] = useState(0)
+  const [answeredQuestions, setAnsweredQuestions] = useState<boolean[]>(new Array(demoQuestions.length).fill(false))
+  const [quizCompleted, setQuizCompleted] = useState(false)
+
+  const handleAnswerSelect = (answerIndex: number) => {
+    if (answeredQuestions[currentQuestion]) return
+    
+    setSelectedAnswer(answerIndex)
+    setShowExplanation(true)
+    
+    const newAnsweredQuestions = [...answeredQuestions]
+    newAnsweredQuestions[currentQuestion] = true
+    setAnsweredQuestions(newAnsweredQuestions)
+    
+    if (answerIndex === demoQuestions[currentQuestion].correctAnswer) {
+      setScore(score + 1)
+    }
+  }
+
+  const nextQuestion = () => {
+    if (currentQuestion < demoQuestions.length - 1) {
+      setCurrentQuestion(currentQuestion + 1)
+      setSelectedAnswer(null)
+      setShowExplanation(false)
+    } else {
+      setQuizCompleted(true)
+    }
+  }
+
+  const restartQuiz = () => {
+    setCurrentQuestion(0)
+    setSelectedAnswer(null)
+    setShowExplanation(false)
+    setScore(0)
+    setAnsweredQuestions(new Array(demoQuestions.length).fill(false))
+    setQuizCompleted(false)
+  }
+
+  const currentQ = demoQuestions[currentQuestion]
+  const progress = ((currentQuestion + 1) / demoQuestions.length) * 100
+
+  if (quizCompleted) {
+    const percentage = Math.round((score / demoQuestions.length) * 100)
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+        <div className="max-w-4xl mx-auto px-4 py-12">
+          <div className="bg-white rounded-2xl shadow-xl p-8 text-center">
+            <div className="mb-8">
+              <div className={`w-24 h-24 mx-auto rounded-full flex items-center justify-center mb-4 ${
+                percentage >= 80 ? 'bg-green-100' : percentage >= 60 ? 'bg-yellow-100' : 'bg-red-100'
+              }`}>
+                <Target className={`w-12 h-12 ${
+                  percentage >= 80 ? 'text-green-600' : percentage >= 60 ? 'text-yellow-600' : 'text-red-600'
+                }`} />
+              </div>
+              <h1 className="text-4xl font-bold text-gray-900 mb-4">Quiz Complete!</h1>
+              <p className="text-xl text-gray-600 mb-6">
+                You scored {score} out of {demoQuestions.length} questions
+              </p>
+              <div className="text-6xl font-bold mb-4">
+                <span className={
+                  percentage >= 80 ? 'text-green-600' : percentage >= 60 ? 'text-yellow-600' : 'text-red-600'
+                }>{percentage}%</span>
+              </div>
+              <p className="text-lg text-gray-600">
+                {percentage >= 80 ? 'Excellent work! 🎉' : 
+                 percentage >= 60 ? 'Good effort! Keep practicing! 👍' : 
+                 'Keep studying! You can do better! 💪'}
+              </p>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button
+                onClick={restartQuiz}
+                className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 flex items-center justify-center"
+              >
+                <RotateCcw className="mr-2 h-5 w-5" />
+                Try Again
+              </button>
+              <Link
+                href="/pricing"
+                className="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 flex items-center justify-center"
+              >
+                Unlock Full Question Bank
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </div>
+            
+            <div className="mt-8 p-6 bg-gray-50 rounded-xl">
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">What&apos;s in the Full Version?</h3>
+              <div className="grid md:grid-cols-3 gap-4 text-left">
+                <div className="flex items-start">
+                  <BookOpen className="h-5 w-5 text-blue-600 mr-2 mt-1" />
+                  <div>
+                    <h4 className="font-semibold text-gray-900">10,000+ Questions</h4>
+                    <p className="text-sm text-gray-600">Comprehensive coverage of all HSFY topics</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <Target className="h-5 w-5 text-green-600 mr-2 mt-1" />
+                  <div>
+                    <h4 className="font-semibold text-gray-900">Detailed Analytics</h4>
+                    <p className="text-sm text-gray-600">Track progress and identify weak areas</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <Clock className="h-5 w-5 text-purple-600 mr-2 mt-1" />
+                  <div>
+                    <h4 className="font-semibold text-gray-900">Timed Practice</h4>
+                    <p className="text-sm text-gray-600">Exam-style practice with time limits</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+      <div className="max-w-4xl mx-auto px-4 py-8">
+        {/* Header */}
+        <div className="text-center mb-8">
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">HSFY Question Bank Demo</h1>
+          <p className="text-gray-600">Try our sample questions to see what&apos;s in store!</p>
+        </div>
+
+        {/* Progress Bar */}
+        <div className="mb-8">
+          <div className="flex justify-between text-sm text-gray-600 mb-2">
+            <span>Question {currentQuestion + 1} of {demoQuestions.length}</span>
+            <span>{Math.round(progress)}% Complete</span>
+          </div>
+          <div className="w-full bg-gray-200 rounded-full h-2">
+            <div 
+              className="bg-blue-600 h-2 rounded-full transition-all duration-300"
+              style={{ width: `${progress}%` }}
+            ></div>
+          </div>
+        </div>
+
+        {/* Question Card */}
+        <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
+          <div className="mb-6">
+            <div className="flex flex-wrap gap-2 mb-4">
+              <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+                {currentQ.subject}
+              </span>
+              <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">
+                {currentQ.topic}
+              </span>
+              <span className={`px-3 py-1 rounded-full text-sm font-medium ${
+                currentQ.difficulty === 'Easy' ? 'bg-green-100 text-green-800' :
+                currentQ.difficulty === 'Medium' ? 'bg-yellow-100 text-yellow-800' :
+                'bg-red-100 text-red-800'
+              }`}>
+                {currentQ.difficulty}
+              </span>
+            </div>
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">{currentQ.question}</h2>
+          </div>
+
+          <div className="space-y-3 mb-6">
+            {currentQ.options.map((option, index) => {
+              let buttonClass = "w-full p-4 text-left border-2 rounded-lg transition-all duration-200 hover:border-blue-300"
+              
+              if (showExplanation) {
+                if (index === currentQ.correctAnswer) {
+                  buttonClass += " border-green-500 bg-green-50 text-green-900"
+                } else if (index === selectedAnswer && index !== currentQ.correctAnswer) {
+                  buttonClass += " border-red-500 bg-red-50 text-red-900"
+                } else {
+                  buttonClass += " border-gray-200 bg-gray-50 text-gray-600"
+                }
+              } else {
+                buttonClass += selectedAnswer === index ? " border-blue-500 bg-blue-50" : " border-gray-200 hover:bg-gray-50"
+              }
+
+              return (
+                <button
+                  key={index}
+                  onClick={() => handleAnswerSelect(index)}
+                  disabled={answeredQuestions[currentQuestion]}
+                  className={buttonClass}
+                >
+                  <div className="flex items-center">
+                    <span className="w-8 h-8 rounded-full border-2 border-current flex items-center justify-center mr-4 text-sm font-bold">
+                      {String.fromCharCode(65 + index)}
+                    </span>
+                    <span className="flex-1">{option}</span>
+                    {showExplanation && index === currentQ.correctAnswer && (
+                      <CheckCircle className="h-6 w-6 text-green-600 ml-2" />
+                    )}
+                    {showExplanation && index === selectedAnswer && index !== currentQ.correctAnswer && (
+                      <XCircle className="h-6 w-6 text-red-600 ml-2" />
+                    )}
+                  </div>
+                </button>
+              )
+            })}
+          </div>
+
+          {showExplanation && (
+            <div className="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
+              <h3 className="font-semibold text-blue-900 mb-2">Explanation:</h3>
+              <p className="text-blue-800">{currentQ.explanation}</p>
+            </div>
+          )}
+
+          {showExplanation && (
+            <div className="text-center">
+              <button
+                onClick={nextQuestion}
+                className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 inline-flex items-center"
+              >
+                {currentQuestion < demoQuestions.length - 1 ? 'Next Question' : 'Finish Quiz'}
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </button>
+            </div>
+          )}
+        </div>
+
+        {/* Demo Limitation Notice */}
+        <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-6 text-center">
+          <h3 className="text-lg font-semibold text-yellow-900 mb-2">This is just a taste!</h3>
+          <p className="text-yellow-800 mb-4">
+            You&apos;re experiencing {demoQuestions.length} sample questions. Our full question bank contains 10,000+ questions 
+            across all HSFY subjects with detailed analytics, progress tracking, and exam simulation.
+          </p>
+          <Link
+            href="/pricing"
+            className="bg-yellow-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-yellow-700 inline-flex items-center"
+          >
+            Unlock Full Access
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </Link>
+        </div>
+      </div>
+    </div>
+  )
+}
