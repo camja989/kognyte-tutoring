@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Zap, Upload, CheckCircle, User, Mail, Phone, GraduationCap, Clock, DollarSign } from 'lucide-react'
+import { Zap, Upload, CheckCircle, User, GraduationCap, Clock, DollarSign } from 'lucide-react'
 
 export default function ApplyPage() {
   const [formData, setFormData] = useState({
@@ -14,14 +14,14 @@ export default function ApplyPage() {
     graduationYear: '',
     currentYear: '',
     gpa: '',
-    subjects: [],
+    subjects: [] as string[],
     position: '',
     experience: '',
     availability: '',
     hourlyRate: '',
     motivation: '',
-    resume: null,
-    transcript: null
+    resume: null as File | null,
+    transcript: null as File | null
   })
 
   const [step, setStep] = useState(1)

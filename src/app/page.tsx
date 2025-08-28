@@ -1,11 +1,10 @@
 'use client'
 
-import { useState } from 'react'
+// useState removed - not used
 import Link from 'next/link'
-import { ArrowRight, BookOpen, Users, Trophy, Star, CheckCircle, Target, Zap } from 'lucide-react'
+import { ArrowRight, BookOpen, Users, Trophy, CheckCircle, Target, Zap } from 'lucide-react'
 
 export default function HomePage() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const stats = [
     { label: 'HSFY Students Helped', value: '500+' },

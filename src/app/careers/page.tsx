@@ -1,11 +1,10 @@
 'use client'
 
-import { useState } from 'react'
+// useState removed - not used
 import Link from 'next/link'
 import { Zap, DollarSign, Clock, Users, BookOpen, Video, Edit3, ArrowRight, Star, CheckCircle } from 'lucide-react'
 
 export default function CareersPage() {
-  const [selectedJob, setSelectedJob] = useState<string | null>(null)
 
   const jobTypes = [
     {
@@ -138,7 +137,7 @@ export default function CareersPage() {
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
               Earn $35-75/hour helping HSFY students succeed. Flexible hours, remote work, 
-              and the satisfaction of making a real difference in students' academic journey.
+              and the satisfaction of making a real difference in students&apos; academic journey.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/apply" className="bg-blue-600 text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 flex items-center justify-center">
@@ -302,7 +301,7 @@ export default function CareersPage() {
                     <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <p className="text-gray-600 italic">"{testimonial.quote}"</p>
+                <p className="text-gray-600 italic"><p className="text-gray-600 italic">                <p className="text-gray-600 italic">"{testimonial.quote}"ldquo;{testimonial.quote}"{testimonial.quote}"rdquo;</p>ldquo;{testimonial.quote}                <p className="text-gray-600 italic">"{testimonial.quote}"ldquo;{testimonial.quote}"{testimonial.quote}"rdquo;</p>rdquo;</p>ldquo;{testimonial.quote}<p className="text-gray-600 italic">                <p className="text-gray-600 italic">"{testimonial.quote}"ldquo;{testimonial.quote}"{testimonial.quote}"rdquo;</p>ldquo;{testimonial.quote}                <p className="text-gray-600 italic">"{testimonial.quote}"ldquo;{testimonial.quote}"{testimonial.quote}"rdquo;</p>rdquo;</p>rdquo;</p>
               </div>
             ))}
           </div>
