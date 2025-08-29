@@ -6,8 +6,8 @@ import { LTILaunchData, LTI_ROLES, HSFY_SUBJECTS } from '@/lib/lti/types'
 // LTI Consumer configurations for different institutions
 const LTI_CONSUMERS = {
   'otago.ac.nz': {
-    consumerKey: 'joltvolt_hsfy_digitalocean_2024',
-    consumerSecret: process.env.LTI_OTAGO_SECRET || 'joltvolt-do-secret-2024',
+    consumerKey: 'joltvolt-otago',
+    consumerSecret: process.env.LTI_OTAGO_SECRET || 'development-secret-key',
     institutionName: 'University of Otago'
   },
   'dev.moodle': {

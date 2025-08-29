@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { ArrowLeft, User, ExternalLink, BookOpen, Users, GraduationCap } from 'lucide-react'
-import { redirectToMoodleLogin, redirectToMoodleRegistration, redirectToMoodleCourse } from '@/lib/moodle-config'
+import { redirectToMoodleLogin, redirectToMoodleRegistration, redirectToMoodleCourse } from "@/lib/moodle-config"
 
 export default function LoginPage() {
   const [isLoading, setIsLoading] = useState(false)
@@ -15,11 +15,11 @@ export default function LoginPage() {
     
     setTimeout(() => {
       if (action === 'login') {
-        redirectToMoodleLogin('/course/enrol.php?id=1') // Redirect to trial course after login
+        redirectToMoodleLogin() // Redirect to login page
       } else if (action === 'register') {
-        redirectToMoodleRegistration('trial') // Register and enroll in trial
+        redirectToMoodleRegistration() // Redirect to registration page
       } else if (action === 'trial') {
-        redirectToMoodleCourse('trial') // Direct to trial course
+        redirectToMoodleCourse("trial") // Redirect to trial course
       }
     }, 1000)
   }

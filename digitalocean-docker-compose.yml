@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: moodle-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: joltvolt-secure-password-2024
+      MYSQL_DATABASE: moodle
+      MYSQL_USER: moodleuser
+      MYSQL_PASSWORD: moodle-db-password-2024
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - moodle-network
+
+  moodle:
+    image: bitnami/moodle:4.3
+    container_name: moodle-app
+    restart: unless-stopped
+    ports:
+      - "80:8080"
+      - "443:8443"
+    environment:
+      MOODLE_DATABASE_HOST: mysql
+      MOODLE_DATABASE_NAME: moodle
+      MOODLE_DATABASE_USER: moodleuser
+      MOODLE_DATABASE_PASSWORD: moodle-db-password-2024
+      MOODLE_USERNAME: admin
+      MOODLE_PASSWORD: JoltVolt-Admin-2024!
+      MOODLE_EMAIL: admin@joltvolt.co.nz
+      MOODLE_SITE_NAME: "JoltVolt HSFY Learning Platform"
+      MOODLE_HOST: 134.199.159.69
+      MOODLE_REVERSEPROXY: "false"
+      MOODLE_SSLPROXY: "false"
+    volumes:
+      - moodle_data:/bitnami/moodle
+      - ./moodledata:/bitnami/moodledata
+    depends_on:
+      - mysql
+    networks:
+      - moodle-network
+
+volumes:
+  mysql_data:
+  moodle_data:
+
+networks:
+  moodle-network:
+    driver: bridge

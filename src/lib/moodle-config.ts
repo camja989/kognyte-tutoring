@@ -1,57 +1,60 @@
-// Moodle integration configuration
+// JoltVolt Moodle Configuration for FREE DigitalOcean Deployment
+
 export const MOODLE_CONFIG = {
-  // MoodleCloud instance (will be created)
-  moodleSiteUrl: 'https://joltvolt-hsfy.moodlecloud.com',
-  
-  // Course enrollment URLs
+  // DigitalOcean droplet URL (update after deployment)
+  moodleSiteUrl: "http://134.199.159.69",
   courses: {
-    trial: '/course/enrol.php?id=1', // FREE TRIAL course
-    biol111: '/course/enrol.php?id=2', 
-    chem111: '/course/enrol.php?id=3',
-    phsi111: '/course/enrol.php?id=4', 
-    hsci111: '/course/enrol.php?id=5'
+    trial: '/course/view.php?id=2',     // FREE TRIAL course ID
+    biol111: '/course/view.php?id=3',   // BIOL111 course ID  
+    chem111: '/course/view.php?id=4',   // CHEM111 course ID
+    phsi111: '/course/view.php?id=5',   // PHSI111 course ID
+    hsci111: '/course/view.php?id=6'    // HSCI111 course ID
   },
-  
-  // Registration and login URLs
   registerUrl: '/login/signup.php',
-  loginUrl: '/login/index.php',
-  
-  // LTI configuration
-  lti: {
-    consumerKey: 'joltvolt_hsfy_2024',
-    launchUrl: 'https://joltvolt-tutoring.netlify.app/api/lti/launch'
-  }
+  loginUrl: '/login/index.php'
 }
 
-// Utility functions for Moodle integration
-export const redirectToMoodleLogin = (returnTo?: string) => {
-  const params = new URLSearchParams()
-  if (returnTo) {
-    params.append('wantsurl', returnTo)
-  }
-  
-  const url = `${MOODLE_CONFIG.moodleSiteUrl}${MOODLE_CONFIG.loginUrl}?${params.toString()}`
-  window.location.href = url
+// LTI Configuration for DigitalOcean Moodle
+export const LTI_CONFIG = {
+  consumerKey: 'joltvolt_hsfy_digitalocean_2024',
+  sharedSecret: 'joltvolt-do-secret-2024',
+  launchUrl: 'https://joltvolt-tutoring.netlify.app/api/lti/launch'
 }
 
-export const redirectToMoodleRegistration = (course?: string) => {
-  let url = `${MOODLE_CONFIG.moodleSiteUrl}${MOODLE_CONFIG.registerUrl}`
-  
-  // If specific course, redirect to that course after registration
-  if (course && MOODLE_CONFIG.courses[course as keyof typeof MOODLE_CONFIG.courses]) {
-    const courseUrl = MOODLE_CONFIG.courses[course as keyof typeof MOODLE_CONFIG.courses]
-    url += `?wantsurl=${encodeURIComponent(courseUrl)}`
+// Helper functions for Moodle redirections
+export function redirectToMoodleLogin() {
+  const url = `${MOODLE_CONFIG.moodleSiteUrl}${MOODLE_CONFIG.loginUrl}`
+  if (typeof window !== 'undefined') {
+    window.location.href = url
   }
-  
-  window.location.href = url
+  return url
 }
 
-export const redirectToMoodleCourse = (courseId: string) => {
-  const courseUrl = MOODLE_CONFIG.courses[courseId as keyof typeof MOODLE_CONFIG.courses]
-  if (courseUrl) {
-    window.location.href = `${MOODLE_CONFIG.moodleSiteUrl}${courseUrl}`
-  } else {
-    // Default to trial course
-    window.location.href = `${MOODLE_CONFIG.moodleSiteUrl}${MOODLE_CONFIG.courses.trial}`
+export function redirectToMoodleRegistration() {
+  const url = `${MOODLE_CONFIG.moodleSiteUrl}${MOODLE_CONFIG.registerUrl}`
+  if (typeof window !== 'undefined') {
+    window.location.href = url
   }
+  return url
 }
+
+export function redirectToMoodleCourse(courseKey: keyof typeof MOODLE_CONFIG.courses) {
+  const coursePath = MOODLE_CONFIG.courses[courseKey]
+  const url = `${MOODLE_CONFIG.moodleSiteUrl}${coursePath}`
+  if (typeof window !== 'undefined') {
+    window.location.href = url
+  }
+  return url
+}
+
+// Subject mapping for course enrollment
+export const SUBJECT_COURSE_MAPPING = {
+  'hsfy-trial': 'trial',
+  'biol111': 'biol111', 
+  'chem111': 'chem111',
+  'phsi111': 'phsi111',
+  'hsci111': 'hsci111'
+} as const
+
+export type SubjectCode = keyof typeof SUBJECT_COURSE_MAPPING
+export type CourseKey = typeof SUBJECT_COURSE_MAPPING[SubjectCode]
