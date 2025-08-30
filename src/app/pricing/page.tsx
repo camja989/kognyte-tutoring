@@ -105,7 +105,7 @@ export default function PricingPage() {
         </h1>
         <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
           Start with our free demo, then unlock the complete HSFY question bank. 
-          Join thousands of students who&apos;ve improved their grades with JoltVolt.
+          Join thousands of students who&apos;ve improved their grades with Kognyte.
         </p>
         
         {/* Pricing comparison */}
@@ -222,7 +222,7 @@ export default function PricingPage() {
           </div>
           
           <blockquote className="text-xl text-gray-600 italic max-w-4xl mx-auto">
-            &ldquo;JoltVolt&apos;s question bank is exactly what I needed for HSFY. The explanations are 
+            &ldquo;Kognyte&apos;s question bank is exactly what I needed for HSFY. The explanations are 
             clear, the questions are challenging, and the price is unbeatable. I improved my grades 
             by 20% in just one semester!&rdquo;
             <cite className="block mt-4 text-gray-900 font-semibold">- Sarah M., HSFY Student</cite>
@@ -240,7 +240,7 @@ export default function PricingPage() {
           <div className="space-y-8">
             {[
               {
-                question: "How does JoltVolt compare to LearnQuick NZ?",
+                question: "How does Kognyte compare to LearnQuick NZ?",
                 answer: "We offer 40% better value with more questions, better explanations, and modern technology. Our platform is specifically designed for HSFY students with University of Otago-focused content."
               },
               {

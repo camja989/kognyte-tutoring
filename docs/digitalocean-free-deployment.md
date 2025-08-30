@@ -1,7 +1,7 @@
 # Deploy FREE Moodle on DigitalOcean - GitHub Student Pack
 
 ## 🎓 Overview
-Deploy your JoltVolt HSFY Moodle platform **COMPLETELY FREE** using GitHub Student Developer Pack's $200 DigitalOcean credit.
+Deploy your Kognyte HSFY Moodle platform **COMPLETELY FREE** using GitHub Student Developer Pack's $200 DigitalOcean credit.
 
 **Total Cost: $0 for 2+ years** (GitHub Student Pack benefit)
 
@@ -51,7 +51,7 @@ Deploy your JoltVolt HSFY Moodle platform **COMPLETELY FREE** using GitHub Stude
 - **SSH keys** (recommended) or **Password**
 
 **Hostname:**
-- `joltvolt-moodle`
+- `kognyte-moodle`
 
 ### 3. Create Droplet
 - Click **"Create Droplet"**
@@ -86,8 +86,8 @@ systemctl enable docker
 ### 3. Create Moodle Directory
 ```bash
 # Create project directory
-mkdir /opt/joltvolt-moodle
-cd /opt/joltvolt-moodle
+mkdir /opt/kognyte-moodle
+cd /opt/kognyte-moodle
 
 # Create data directory
 mkdir moodledata
@@ -105,7 +105,7 @@ services:
     container_name: moodle-mysql
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: joltvolt-secure-password-2024
+      MYSQL_ROOT_PASSWORD: kognyte-secure-password-2024
       MYSQL_DATABASE: moodle
       MYSQL_USER: moodleuser
       MYSQL_PASSWORD: moodle-db-password-2024
@@ -127,9 +127,9 @@ services:
       MOODLE_DATABASE_USER: moodleuser
       MOODLE_DATABASE_PASSWORD: moodle-db-password-2024
       MOODLE_USERNAME: admin
-      MOODLE_PASSWORD: JoltVolt-Admin-2024!
-      MOODLE_EMAIL: admin@joltvolt.co.nz
-      MOODLE_SITE_NAME: "JoltVolt HSFY Learning Platform"
+      MOODLE_PASSWORD: Kognyte-Admin-2024!
+      MOODLE_EMAIL: admin@kognyte.co.nz
+      MOODLE_SITE_NAME: "Kognyte HSFY Learning Platform"
       MOODLE_HOST: your-droplet-ip  # Replace with actual IP
       MOODLE_REVERSEPROXY: "false"
       MOODLE_SSLPROXY: "false"
@@ -175,10 +175,10 @@ docker-compose ps
 apt install nginx -y
 
 # Create nginx configuration
-cat > /etc/nginx/sites-available/joltvolt << 'NGINX_EOF'
+cat > /etc/nginx/sites-available/kognyte << 'NGINX_EOF'
 server {
     listen 80;
-    server_name joltvolt-hsfy.ddns.net;  # Use free DDNS service
+    server_name kognyte-hsfy.ddns.net;  # Use free DDNS service
     
     location / {
         proxy_pass http://localhost;
@@ -191,7 +191,7 @@ server {
 NGINX_EOF
 
 # Enable site
-ln -s /etc/nginx/sites-available/joltvolt /etc/nginx/sites-enabled/
+ln -s /etc/nginx/sites-available/kognyte /etc/nginx/sites-enabled/
 systemctl restart nginx
 ```
 
@@ -201,11 +201,11 @@ systemctl restart nginx
 1. Open browser to `http://your-droplet-ip`
 2. Login with:
    - **Username**: admin
-   - **Password**: JoltVolt-Admin-2024!
+   - **Password**: Kognyte-Admin-2024!
 
 ### 2. Configure Site Settings
 1. **Site administration** → **Appearance** → **Themes**
-2. Set site name: "JoltVolt HSFY Learning Platform"
+2. Set site name: "Kognyte HSFY Learning Platform"
 3. Set timezone: "Pacific/Auckland"
 
 ### 3. Enable Self-Registration
@@ -234,20 +234,20 @@ All courses: Enable **Self enrollment** (no key required)
 1. **Site administration** → **Plugins** → **Activity modules** → **External tool**
 2. **Manage tools** → **Configure a tool manually**
 3. Settings:
-   - **Tool name**: JoltVolt Question Bank
-   - **Tool URL**: https://joltvolt-tutoring.netlify.app/api/lti/launch
-   - **Consumer key**: joltvolt_hsfy_digitalocean_2024
-   - **Shared secret**: joltvolt-do-secret-2024
+   - **Tool name**: Kognyte Question Bank
+   - **Tool URL**: https://kognyte-tutoring.netlify.app/api/lti/launch
+   - **Consumer key**: kognyte_hsfy_digitalocean_2024
+   - **Shared secret**: kognyte-do-secret-2024
    - **Accept grades**: Yes
    - **Share name/email**: Always
 
 ### 2. Add Activities to Courses
 For each course, add **External tool** activity:
 - **Activity name**: [Subject] Practice Questions
-- **Tool**: JoltVolt Question Bank
+- **Tool**: Kognyte Question Bank
 - **Custom parameters**: subject=[course-code]
 
-## 📝 Step 7: Update JoltVolt Website
+## 📝 Step 7: Update Kognyte Website
 
 ### 1. Update Moodle Configuration
 Update `src/lib/moodle-config.ts`:
@@ -272,9 +272,9 @@ Update `src/app/api/lti/launch/route.ts`:
 ```typescript
 const LTI_CONSUMERS = {
   'digitalocean': {
-    consumerKey: 'joltvolt_hsfy_digitalocean_2024',
-    consumerSecret: 'joltvolt-do-secret-2024',
-    institutionName: 'JoltVolt DigitalOcean'
+    consumerKey: 'kognyte_hsfy_digitalocean_2024',
+    consumerSecret: 'kognyte-do-secret-2024',
+    institutionName: 'Kognyte DigitalOcean'
   }
 }
 ```
@@ -294,7 +294,7 @@ git push origin main
 - ✅ All 5 courses created
 - ✅ Self-enrollment working
 
-### 2. Test JoltVolt Integration
+### 2. Test Kognyte Integration
 - ✅ Website redirects to DigitalOcean Moodle
 - ✅ Students can register and enroll
 - ✅ LTI integration launches questions
@@ -323,7 +323,7 @@ git push origin main
 - [ ] Self-registration enabled
 - [ ] All 5 HSFY courses created with self-enrollment
 - [ ] LTI external tool configured
-- [ ] JoltVolt website updated with droplet IP
+- [ ] Kognyte website updated with droplet IP
 - [ ] End-to-end user flow tested
 
 ## 📊 Performance & Scaling

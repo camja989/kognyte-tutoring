@@ -1,0 +1,45 @@
+version: '3.8'
+services:
+  moodle:
+    image: 'bitnami/moodle:4.1'
+    container_name: moodle-fresh
+    ports:
+      - '80:8080'
+    environment:
+      - MOODLE_DATABASE_HOST=mariadb
+      - MOODLE_DATABASE_NAME=bitnami_moodle
+      - MOODLE_DATABASE_USER=bn_moodle
+      - MOODLE_DATABASE_PASSWORD=moodle123
+      - MOODLE_USERNAME=admin
+      - MOODLE_PASSWORD=Kognyte2025!
+      - MOODLE_EMAIL=admin@kognyte.co.nz
+      - MOODLE_SITE_NAME=Kognyte Premium HSFY Platform
+      - MOODLE_HOST=134.199.159.69
+    depends_on:
+      - mariadb
+    volumes:
+      - 'moodle_data_fresh:/bitnami/moodle'
+      - 'moodledata_data_fresh:/bitnami/moodledata'
+    restart: unless-stopped
+
+  mariadb:
+    image: 'bitnami/mariadb:10.6'
+    container_name: mariadb-fresh
+    environment:
+      - MARIADB_USER=bn_moodle
+      - MARIADB_PASSWORD=moodle123
+      - MARIADB_DATABASE=bitnami_moodle
+      - MARIADB_ROOT_PASSWORD=root123
+      - MARIADB_CHARACTER_SET=utf8mb4
+      - MARIADB_COLLATE=utf8mb4_unicode_ci
+    volumes:
+      - 'mariadb_data_fresh:/bitnami/mariadb'
+    restart: unless-stopped
+
+volumes:
+  moodle_data_fresh:
+    driver: local
+  moodledata_data_fresh:
+    driver: local
+  mariadb_data_fresh:
+    driver: local

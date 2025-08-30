@@ -1,4 +1,4 @@
-// LTI Integration Types for JoltVolt Moodle Integration
+// LTI Integration Types for Kognyte Moodle Integration
 
 export interface LTILaunchData {
   // Basic LTI Parameters

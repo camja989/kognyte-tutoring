@@ -9,7 +9,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center">
-              <div className="text-2xl font-bold text-blue-600">JoltVolt</div>
+              <div className="text-2xl font-bold text-blue-600">Kognyte</div>
             </div>
             <div className="hidden md:flex items-center space-x-8">
               <Link href="#features" className="text-gray-600 hover:text-blue-600 px-3 py-2 text-sm font-medium">Features</Link>
@@ -64,7 +64,7 @@ export default function HomePage() {
       <section id="features" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose JoltVolt?</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Why Choose Kognyte?</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Our platform is specifically designed for HSFY students, with content created by top-performing graduates and current tutors.
             </p>
@@ -118,7 +118,7 @@ export default function HomePage() {
             </div>
             <h2 className="text-3xl font-bold mb-4">Seamless Moodle Integration</h2>
             <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-              Access JoltVolt directly from your University of Otago Moodle course. 
+              Access Kognyte directly from your University of Otago Moodle course. 
               No separate login required - grades sync automatically to your gradebook.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -151,7 +151,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Ready to Excel in HSFY?</h2>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Join the thousands of students already using JoltVolt to master their Health Sciences studies. 
+            Join the thousands of students already using Kognyte to master their Health Sciences studies. 
             Start your free trial today and see the difference quality questions make.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -178,7 +178,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <div className="text-2xl font-bold text-blue-400 mb-4">JoltVolt</div>
+              <div className="text-2xl font-bold text-blue-400 mb-4">Kognyte</div>
               <p className="text-gray-400 mb-4">
                 Empowering HSFY students at the University of Otago with expert-crafted practice questions.
               </p>
@@ -204,7 +204,7 @@ export default function HomePage() {
             <div>
               <h3 className="text-lg font-semibold mb-4">Support</h3>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="mailto:support@joltvolt.com" className="hover:text-white transition-colors">Contact Us</a></li>
+                <li><a href="mailto:support@kognyte.com" className="hover:text-white transition-colors">Contact Us</a></li>
                 <li><Link href="/terms" className="hover:text-white transition-colors">Terms</Link></li>
                 <li><Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link></li>
               </ul>
@@ -212,7 +212,7 @@ export default function HomePage() {
           </div>
           
           <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 JoltVolt. All rights reserved. Designed for University of Otago HSFY students.</p>
+            <p>&copy; 2024 Kognyte. All rights reserved. Designed for University of Otago HSFY students.</p>
           </div>
         </div>
       </footer>

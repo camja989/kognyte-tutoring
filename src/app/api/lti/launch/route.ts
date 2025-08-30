@@ -6,12 +6,12 @@ import { LTILaunchData, LTI_ROLES, HSFY_SUBJECTS } from '@/lib/lti/types'
 // LTI Consumer configurations for different institutions
 const LTI_CONSUMERS = {
   'otago.ac.nz': {
-    consumerKey: 'joltvolt_hsfy_digitalocean_2024',
-    consumerSecret: process.env.LTI_OTAGO_SECRET || 'joltvolt-do-secret-2024',
+    consumerKey: 'kognyte_hsfy_digitalocean_2024',
+    consumerSecret: process.env.LTI_OTAGO_SECRET || 'kognyte-do-secret-2024',
     institutionName: 'University of Otago'
   },
   'dev.moodle': {
-    consumerKey: 'joltvolt-dev',
+    consumerKey: 'kognyte-dev',
     consumerSecret: 'dev-secret-key-123',
     institutionName: 'Development Moodle'
   }
@@ -102,7 +102,7 @@ export async function POST(request: NextRequest) {
       subject: subject
     })
 
-    // Redirect to appropriate JoltVolt page based on role and subject
+    // Redirect to appropriate Kognyte page based on role and subject
     const redirectUrl = getRedirectUrl(userRoles, subject, sessionToken)
     
     return NextResponse.redirect(new URL(redirectUrl, request.url))
@@ -205,7 +205,7 @@ function getRedirectUrl(roles: string[], subject: string | null, sessionToken: s
 // Handle GET requests for testing
 export async function GET(request: NextRequest) {
   return NextResponse.json({
-    message: 'JoltVolt LTI Launch Endpoint',
+    message: 'Kognyte LTI Launch Endpoint',
     version: '1.0',
     supportedVersions: ['LTI-1p0', 'LTI-1p1'],
     subjects: HSFY_SUBJECTS.map(s => ({

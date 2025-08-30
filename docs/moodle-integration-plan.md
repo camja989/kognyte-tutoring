@@ -1,7 +1,7 @@
-# Moodle Integration Plan for JoltVolt
+# Moodle Integration Plan for Kognyte
 
 ## Overview
-This document outlines the strategy for integrating JoltVolt with Moodle LMS systems, specifically targeting University of Otago's HSFY courses.
+This document outlines the strategy for integrating Kognyte with Moodle LMS systems, specifically targeting University of Otago's HSFY courses.
 
 ## Phase 1: Research & Planning (Week 1-2)
 
@@ -145,13 +145,13 @@ const LTIQuestionBank = ({ ltiData }) => {
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <cartridge_basiclti_link>
-  <blti:title>JoltVolt HSFY Question Bank</blti:title>
+  <blti:title>Kognyte HSFY Question Bank</blti:title>
   <blti:description>Interactive question bank for Health Sciences First Year</blti:description>
-  <blti:launch_url>https://joltvolt.com/api/lti/launch</blti:launch_url>
-  <blti:secure_launch_url>https://joltvolt.com/api/lti/launch</blti:secure_launch_url>
+  <blti:launch_url>https://kognyte.com/api/lti/launch</blti:launch_url>
+  <blti:secure_launch_url>https://kognyte.com/api/lti/launch</blti:secure_launch_url>
   <blti:vendor>
-    <lticp:code>joltvolt</lticp:code>
-    <lticp:name>JoltVolt</lticp:name>
+    <lticp:code>kognyte</lticp:code>
+    <lticp:name>Kognyte</lticp:name>
   </blti:vendor>
 </cartridge_basiclti_link>
 ```
@@ -166,7 +166,7 @@ const LTIQuestionBank = ({ ltiData }) => {
 ## Data Flow Architecture
 
 ```
-Moodle Course → LTI Launch → JoltVolt Authentication → Question Bank
+Moodle Course → LTI Launch → Kognyte Authentication → Question Bank
                     ↓
 Student Progress ← Grade Passback ← Quiz Completion ← Answer Submission
 ```

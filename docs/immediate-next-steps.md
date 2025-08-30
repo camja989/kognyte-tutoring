@@ -1,4 +1,4 @@
-# JoltVolt Tutoring - Immediate Next Steps
+# Kognyte Tutoring - Immediate Next Steps
 
 ## ✅ Completed Implementation
 
@@ -21,10 +21,10 @@
 - **Conversion Funnel**: Demo leads to paid subscriptions
 
 ### 4. Platform Infrastructure (COMPLETE)
-- **GitHub Repository**: https://github.com/camja989/joltvolt-tutoring
+- **GitHub Repository**: https://github.com/camja989/kognyte-tutoring
 - **Netlify Deployment**: Auto-deploying from main branch
 - **Build Process**: TypeScript + Next.js 15 + Tailwind CSS
-- **Domain Ready**: https://joltvolt-tutoring.netlify.app
+- **Domain Ready**: https://kognyte-tutoring.netlify.app
 
 ## 🎯 Critical Next Actions (Week 1)
 
@@ -32,7 +32,7 @@
 **Priority: URGENT**
 ```
 TO: its-help@otago.ac.nz
-SUBJECT: LTI External Tool Integration Request - JoltVolt Tutoring Platform
+SUBJECT: LTI External Tool Integration Request - Kognyte Tutoring Platform
 ATTACH: MOODLE_INTEGRATION.md
 
 Dear Learning Technology Services Team,
@@ -42,14 +42,14 @@ Our platform provides subject-specific question banks for BIOL111, CHEM111, PHSI
 and HSCI111 with automatic grade passback to your Moodle gradebook.
 
 Technical Details:
-- Launch URL: https://joltvolt-tutoring.netlify.app/api/lti/launch
+- Launch URL: https://kognyte-tutoring.netlify.app/api/lti/launch
 - LTI 1.1 compliant with OAuth 1.0a authentication
 - Ready for immediate pilot testing
 
 We would like to schedule a demo and discuss integration possibilities.
 
 Best regards,
-JoltVolt Tutoring Team
+Kognyte Tutoring Team
 ```
 
 ### 2. Consumer Key/Secret Setup

@@ -40,7 +40,7 @@ $CFG->admin     = 'admin';
 
 // Security settings
 $CFG->directorypermissions = 0777;
-$CFG->passwordsaltmain = getenv('MOODLE_SALT') ?: 'joltvolt-hsfy-' . uniqid();
+$CFG->passwordsaltmain = getenv('MOODLE_SALT') ?: 'kognyte-hsfy-' . uniqid();
 
 // Performance settings for Railway
 $CFG->cachedir = '/tmp/moodle-cache';
@@ -52,11 +52,11 @@ $CFG->smtphosts = getenv('SMTP_HOST') ?: '';
 $CFG->smtpuser = getenv('SMTP_USER') ?: '';
 $CFG->smtppass = getenv('SMTP_PASS') ?: '';
 $CFG->smtpsecure = 'tls';
-$CFG->noreplyaddress = 'noreply@joltvolt.co.nz';
+$CFG->noreplyaddress = 'noreply@kognyte.co.nz';
 
-// JoltVolt specific settings
-$CFG->siteshortname = 'JoltVolt HSFY';
-$CFG->fullname = 'JoltVolt HSFY Learning Platform';
+// Kognyte specific settings
+$CFG->siteshortname = 'Kognyte HSFY';
+$CFG->fullname = 'Kognyte HSFY Learning Platform';
 
 // Disable some features for performance on free tier
 $CFG->enablecompletion = true;
@@ -64,7 +64,7 @@ $CFG->enableavailability = true;
 $CFG->enableoutcomes = false;
 $CFG->enablewebservices = true;
 
-// Enable LTI for JoltVolt integration
+// Enable LTI for Kognyte integration
 $CFG->enablemobilewebservice = 1;
 
 // Timezone

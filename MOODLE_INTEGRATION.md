@@ -1,21 +1,21 @@
-# Moodle LTI Integration Guide for JoltVolt Tutoring
+# Moodle LTI Integration Guide for Kognyte Tutoring
 
 ## Overview
-JoltVolt Tutoring Platform now supports seamless integration with Moodle via LTI (Learning Tools Interoperability) 1.1. This enables University of Otago HSFY students to access our specialized question banks directly from their course pages without leaving the Moodle environment.
+Kognyte Tutoring Platform now supports seamless integration with Moodle via LTI (Learning Tools Interoperability) 1.1. This enables University of Otago HSFY students to access our specialized question banks directly from their course pages without leaving the Moodle environment.
 
 ## For University of Otago Learning Technology Services
 
 ### Contact Information
 **To set up LTI integration:**
 - Email: its-help@otago.ac.nz
-- Subject: "LTI External Tool Integration Request - JoltVolt Tutoring Platform"
+- Subject: "LTI External Tool Integration Request - Kognyte Tutoring Platform"
 
 ### Technical Integration Details
 
 #### LTI Configuration
 ```
-Tool Name: JoltVolt HSFY Tutoring
-Launch URL: https://joltvolt-tutoring.netlify.app/api/lti/launch
+Tool Name: Kognyte HSFY Tutoring
+Launch URL: https://kognyte-tutoring.netlify.app/api/lti/launch
 Consumer Key: otago_hsfy_2024
 Shared Secret: [To be provided securely]
 Privacy Settings: Send names and email addresses
@@ -46,13 +46,13 @@ Grade Settings: Accept grades from tool (for gradebook integration)
 
 ### 2. Course Coordinator Setup
 1. In your HSFY course, click "Turn editing on"
-2. Add activity → External tool → JoltVolt HSFY Tutoring
+2. Add activity → External tool → Kognyte HSFY Tutoring
 3. Configure activity name (e.g., "BIOL111 Practice Questions")
 4. Set grade settings if you want scores in gradebook
 5. Save and display
 
 ### 3. Student Experience
-1. Students click the JoltVolt activity link in their course
+1. Students click the Kognyte activity link in their course
 2. Automatically logged in via LTI (no separate account needed)
 3. Access subject-specific question banks
 4. Complete interactive quizzes with instant feedback
@@ -125,7 +125,7 @@ Compliant with IMS LTI 1.1 Basic Outcomes Service for automatic gradebook update
 ## Support & Troubleshooting
 
 ### Technical Support
-- **Email**: support@joltvolt.com
+- **Email**: support@kognyte.com
 - **Response Time**: Within 24 hours for integration issues
 - **Documentation**: Complete API documentation available
 - **Testing Environment**: Sandbox available for pre-deployment testing
@@ -150,10 +150,10 @@ Compliant with IMS LTI 1.1 Basic Outcomes Service for automatic gradebook update
 
 ## Contact for Integration
 
-**Primary Contact**: support@joltvolt.com
+**Primary Contact**: support@kognyte.com
 **Technical Lead**: Available for video calls to demonstrate integration
 **Documentation**: Full technical specifications available upon request
 
 ---
 
-*JoltVolt Tutoring Platform - Empowering HSFY student success through innovative educational technology*
+*Kognyte Tutoring Platform - Empowering HSFY student success through innovative educational technology*

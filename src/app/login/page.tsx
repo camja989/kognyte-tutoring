@@ -35,7 +35,7 @@ export default function LoginPage() {
               Back to Home
             </Link>
             <div className="text-2xl font-bold text-gray-900">
-              JoltVolt
+              Kognyte
             </div>
           </div>
         </div>

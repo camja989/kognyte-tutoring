@@ -1,7 +1,7 @@
 # Deploy FREE Moodle on Railway - Complete Guide
 
 ## 🎯 Overview
-Deploy your JoltVolt HSFY Moodle platform completely **FREE** on Railway with MySQL database.
+Deploy your Kognyte HSFY Moodle platform completely **FREE** on Railway with MySQL database.
 
 **Total Cost: $0/month** (Railway Hobby Plan)
 
@@ -17,7 +17,7 @@ Deploy your JoltVolt HSFY Moodle platform completely **FREE** on Railway with My
 1. Click **"New Project"**
 2. Select **"Deploy from GitHub repo"**
 3. Connect your GitHub account
-4. Select `joltvolt-tutoring` repository
+4. Select `kognyte-tutoring` repository
 
 ## 🗄️ Step 2: Add MySQL Database
 
@@ -39,12 +39,12 @@ Railway automatically creates these environment variables:
 
 ### 1. Configure Deployment
 1. In Railway project dashboard
-2. Click on your **joltvolt-tutoring** service
+2. Click on your **kognyte-tutoring** service
 3. Go to **"Settings"** → **"Environment"**
 4. Add these variables:
 
 ```
-MOODLE_SALT=joltvolt-hsfy-production-salt-2024
+MOODLE_SALT=kognyte-hsfy-production-salt-2024
 SMTP_HOST=smtp.gmail.com
 SMTP_USER=your-email@gmail.com
 SMTP_PASS=your-app-password
@@ -62,7 +62,7 @@ SMTP_PASS=your-app-password
 ### 3. Wait for Deployment (5-10 minutes)
 - Monitor the build logs in Railway dashboard
 - Look for "Deployment successful" message
-- Note your public URL (e.g., `joltvolt-production.up.railway.app`)
+- Note your public URL (e.g., `kognyte-production.up.railway.app`)
 
 ## ⚙️ Step 4: Complete Moodle Setup
 
@@ -78,11 +78,11 @@ SMTP_PASS=your-app-password
    - Username: `admin`
    - Password: `[Strong password]`
    - Email: `your-email@domain.com`
-   - First name: `JoltVolt`
+   - First name: `Kognyte`
    - Surname: `Admin`
 
 ### 3. Site Settings
-- **Site name**: JoltVolt HSFY Learning Platform
+- **Site name**: Kognyte HSFY Learning Platform
 - **Site description**: Practice questions for University of Otago HSFY students
 - **Time zone**: Pacific/Auckland
 
@@ -129,27 +129,27 @@ SMTP_PASS=your-app-password
 1. **Site administration** → **Plugins** → **Activity modules** → **External tool**
 2. Click **"Manage tools"** → **"Configure a tool manually"**
 3. Settings:
-   - **Tool name**: JoltVolt Question Bank
-   - **Tool URL**: `https://joltvolt-tutoring.netlify.app/api/lti/launch`
-   - **Consumer key**: `joltvolt_hsfy_railway_2024`
-   - **Shared secret**: `joltvolt-railway-secret-2024` 
+   - **Tool name**: Kognyte Question Bank
+   - **Tool URL**: `https://kognyte-tutoring.netlify.app/api/lti/launch`
+   - **Consumer key**: `kognyte_hsfy_railway_2024`
+   - **Shared secret**: `kognyte-railway-secret-2024` 
    - **Accept grades**: Yes
    - **Share name/email**: Always
 
 ### 2. Add Activities to Each Course
 For each course, add **External tool** activity:
 - **Activity name**: [Subject] Practice Questions
-- **External tool**: JoltVolt Question Bank
+- **External tool**: Kognyte Question Bank
 - **Custom parameters**: `subject=[course-code]`
 
-## 📝 Step 7: Update JoltVolt Website
+## 📝 Step 7: Update Kognyte Website
 
 ### 1. Update Moodle Configuration
 Update `src/lib/moodle-config.ts`:
 
 ```typescript
 export const MOODLE_CONFIG = {
-  moodleSiteUrl: 'https://joltvolt-production.up.railway.app', // Your Railway URL
+  moodleSiteUrl: 'https://kognyte-production.up.railway.app', // Your Railway URL
   courses: {
     trial: '/course/view.php?id=2',     // Check actual course IDs
     biol111: '/course/view.php?id=3',   
@@ -166,7 +166,7 @@ export const MOODLE_CONFIG = {
 Update `src/app/api/lti/launch/route.ts` with new shared secret:
 
 ```typescript
-const SHARED_SECRET = 'joltvolt-railway-secret-2024';
+const SHARED_SECRET = 'kognyte-railway-secret-2024';
 ```
 
 ### 3. Deploy Website Updates
@@ -179,11 +179,11 @@ git push origin main
 ## 🎯 Step 8: Test Complete System
 
 ### 1. Test Website Integration
-1. Go to https://joltvolt-tutoring.netlify.app
+1. Go to https://kognyte-tutoring.netlify.app
 2. Click **"Try Free Demo"** → Should redirect to Railway Moodle
 3. Register new student account
 4. Enroll in FREE TRIAL course
-5. Launch JoltVolt questions via LTI
+5. Launch Kognyte questions via LTI
 
 ### 2. Test All User Flows
 - ✅ Student registration
@@ -213,7 +213,7 @@ git push origin main
 - [ ] MySQL database connected and working  
 - [ ] All 5 HSFY courses created
 - [ ] LTI integration configured
-- [ ] JoltVolt website updated with Railway URLs
+- [ ] Kognyte website updated with Railway URLs
 - [ ] End-to-end user flow tested
 - [ ] Admin account secured
 - [ ] Email notifications configured

@@ -6,8 +6,8 @@
 1. Go to: https://moodlecloud.com/
 2. Click "Get started for free"
 3. Fill in details:
-   - **Site name**: joltvolt-hsfy
-   - **Site URL**: joltvolt-hsfy.moodlecloud.com
+   - **Site name**: kognyte-hsfy
+   - **Site URL**: kognyte-hsfy.moodlecloud.com
    - **Admin first name**: Your name
    - **Admin surname**: Your surname  
    - **Admin email**: your-email@domain.com
@@ -24,7 +24,7 @@
 ## Phase 2: Configure Moodle Site
 
 ### 1. Access Admin Panel
-1. Go to: https://joltvolt-hsfy.moodlecloud.com
+1. Go to: https://kognyte-hsfy.moodlecloud.com
 2. Login with admin credentials
 3. Navigate to **Site administration**
 
@@ -41,7 +41,7 @@
 ### 3. Configure Site Settings
 1. Go to **Site administration → Appearance → Themes → Theme settings**
 2. Set:
-   - **Site name**: JoltVolt HSFY Learning Platform
+   - **Site name**: Kognyte HSFY Learning Platform
    - **Site description**: Practice questions for University of Otago HSFY students
    - **Front page**: Course list + Site news
 
@@ -99,17 +99,17 @@
    - **Course ID**: hsci111
    - **Course summary**: Health sciences foundations and applications
 
-## Phase 4: Configure External Tool (JoltVolt Integration)
+## Phase 4: Configure External Tool (Kognyte Integration)
 
 ### 1. Add External Tool Configuration
 1. Go to **Site administration → Plugins → Activity modules → External tool**
 2. Click **Manage tools**
 3. Click **Configure a tool manually**
 4. Configure:
-   - **Tool name**: JoltVolt Question Bank
-   - **Tool URL**: https://joltvolt-tutoring.netlify.app/api/lti/launch
+   - **Tool name**: Kognyte Question Bank
+   - **Tool URL**: https://kognyte-tutoring.netlify.app/api/lti/launch
    - **LTI version**: LTI 1.0/1.1
-   - **Consumer key**: joltvolt_hsfy_2024
+   - **Consumer key**: kognyte_hsfy_2024
    - **Shared secret**: [Generate a secure random string - save this!]
    - **Tool configuration usage**: Show in activity chooser and as a preconfigured tool
    - **Default launch container**: New window
@@ -121,17 +121,17 @@
 ### 2. Test External Tool
 1. Go to any course
 2. Turn editing on
-3. Add activity → External tool → JoltVolt Question Bank
+3. Add activity → External tool → Kognyte Question Bank
 4. Verify it appears in the activity list
 
-## Phase 5: Add JoltVolt Activities to Each Course
+## Phase 5: Add Kognyte Activities to Each Course
 
 ### HSFY Trial Course
 1. Enter the HSFY-TRIAL course
 2. Turn editing on
 3. In Section 1, click **Add an activity or resource**
 4. Select **External tool**
-5. Choose **JoltVolt Question Bank**
+5. Choose **Kognyte Question Bank**
 6. Configure:
    - **Activity name**: All HSFY Practice Questions - FREE ACCESS
    - **Custom parameters**: subject=hsfy-trial
@@ -140,25 +140,25 @@
 7. Save and display
 
 ### BIOL111 Course
-1. Add JoltVolt activity:
+1. Add Kognyte activity:
    - **Activity name**: Biology Practice Questions
    - **Custom parameters**: subject=biol111
    - **Maximum grade**: 100
 
 ### CHEM111 Course
-1. Add JoltVolt activity:
+1. Add Kognyte activity:
    - **Activity name**: Chemistry Practice Questions  
    - **Custom parameters**: subject=chem111
    - **Maximum grade**: 100
 
 ### PHSI111 Course
-1. Add JoltVolt activity:
+1. Add Kognyte activity:
    - **Activity name**: Physics Practice Questions
    - **Custom parameters**: subject=phsi111
    - **Maximum grade**: 100
 
 ### HSCI111 Course
-1. Add JoltVolt activity:
+1. Add Kognyte activity:
    - **Activity name**: Health Sciences Practice Questions
    - **Custom parameters**: subject=hsci111
    - **Maximum grade**: 100
@@ -179,7 +179,7 @@
 3. Add text in the topic section:
 
 ```
-Welcome to JoltVolt HSFY Learning Platform
+Welcome to Kognyte HSFY Learning Platform
 
 🎓 Designed specifically for University of Otago Health Sciences First Year students
 
@@ -195,7 +195,7 @@ Ready to excel in your HSFY studies? Choose a course below to get started!
 
 ### 1. Test Registration Flow
 1. Open incognito browser
-2. Go to https://joltvolt-hsfy.moodlecloud.com
+2. Go to https://kognyte-hsfy.moodlecloud.com
 3. Click "Create new account"
 4. Fill in student details
 5. Verify email confirmation works
@@ -207,19 +207,19 @@ Ready to excel in your HSFY studies? Choose a course below to get started!
 3. Verify self-enrollment works
 4. Access the course
 
-### 3. Test JoltVolt Integration
+### 3. Test Kognyte Integration
 1. In the trial course, click "All HSFY Practice Questions"
-2. Verify it redirects to JoltVolt with LTI authentication
+2. Verify it redirects to Kognyte with LTI authentication
 3. Complete some questions
 4. Return to Moodle and check if grade appears
 
-## Phase 8: Update JoltVolt Website
+## Phase 8: Update Kognyte Website
 
 ### 1. Update Moodle Configuration
 Update `src/lib/moodle-config.ts` with actual course IDs:
 ```typescript
 export const MOODLE_CONFIG = {
-  moodleSiteUrl: 'https://joltvolt-hsfy.moodlecloud.com',
+  moodleSiteUrl: 'https://kognyte-hsfy.moodlecloud.com',
   courses: {
     trial: '/course/view.php?id=1',     // FREE TRIAL course ID
     biol111: '/course/view.php?id=2',   // BIOL111 course ID  
@@ -233,7 +233,7 @@ export const MOODLE_CONFIG = {
 ```
 
 ### 2. Test Website Integration
-1. Go to your JoltVolt website
+1. Go to your Kognyte website
 2. Click "Try Free Demo" or "Login"
 3. Verify it redirects to correct Moodle URLs
 4. Test the complete user flow
@@ -249,7 +249,7 @@ export const MOODLE_CONFIG = {
 
 ### 2. Content Checklist  
 - [ ] All 5 courses created
-- [ ] JoltVolt activities added to each course
+- [ ] Kognyte activities added to each course
 - [ ] Course descriptions are complete
 - [ ] Front page welcome message added
 - [ ] Category structure is clear
@@ -257,13 +257,13 @@ export const MOODLE_CONFIG = {
 ### 3. Testing Checklist
 - [ ] User registration works
 - [ ] Course enrollment works  
-- [ ] LTI integration launches JoltVolt
+- [ ] LTI integration launches Kognyte
 - [ ] Grade passback functions
 - [ ] Mobile responsiveness verified
 
 ## Phase 10: Go Live!
 
-1. **Announce to Students**: Share https://joltvolt-hsfy.moodlecloud.com
+1. **Announce to Students**: Share https://kognyte-hsfy.moodlecloud.com
 2. **Monitor Usage**: Check enrollment and activity logs
 3. **Gather Feedback**: Survey users about experience
 4. **Iterate**: Improve based on student feedback

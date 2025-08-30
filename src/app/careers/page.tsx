@@ -77,7 +77,7 @@ export default function CareersPage() {
       name: 'Sarah M.',
       role: 'PHSI Tutor',
       image: '/avatars/sarah.jpg',
-      quote: 'Working with JoltVolt has been amazing. I make $45/hour helping students while building my CV for med school.',
+      quote: 'Working with Kognyte has been amazing. I make $45/hour helping students while building my CV for med school.',
       rating: 5
     },
     {
@@ -111,7 +111,7 @@ export default function CareersPage() {
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="flex items-center">
               <Zap className="h-8 w-8 text-blue-600" />
-              <span className="ml-2 text-2xl font-bold text-gray-900">JoltVolt</span>
+              <span className="ml-2 text-2xl font-bold text-gray-900">Kognyte</span>
             </Link>
             
             <div className="hidden md:block">
@@ -170,7 +170,7 @@ export default function CareersPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Choose Your Path</h2>
-            <p className="text-xl text-gray-600">Multiple ways to earn with JoltVolt</p>
+            <p className="text-xl text-gray-600">Multiple ways to earn with Kognyte</p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
@@ -326,7 +326,7 @@ export default function CareersPage() {
             <div>
               <div className="flex items-center mb-4">
                 <Zap className="h-8 w-8 text-blue-400" />
-                <span className="ml-2 text-2xl font-bold">JoltVolt</span>
+                <span className="ml-2 text-2xl font-bold">Kognyte</span>
               </div>
               <p className="text-gray-400">Join our mission to help HSFY students succeed at University of Otago.</p>
             </div>
@@ -354,12 +354,12 @@ export default function CareersPage() {
                 <li><Link href="/help">Help Center</Link></li>
                 <li><Link href="/privacy">Privacy</Link></li>
                 <li><Link href="/terms">Terms</Link></li>
-                <li>careers@joltvolt.com</li>
+                <li>careers@kognyte.com</li>
               </ul>
             </div>
           </div>
           <div className="border-t border-gray-800 pt-8 mt-8 text-center text-gray-400">
-            <p>&copy; 2025 JoltVolt. All rights reserved. Building the future of HSFY education.</p>
+            <p>&copy; 2025 Kognyte. All rights reserved. Building the future of HSFY education.</p>
           </div>
         </div>
       </footer>

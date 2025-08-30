@@ -89,7 +89,7 @@ export default function ApplyPage() {
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="flex items-center">
               <Zap className="h-8 w-8 text-blue-600" />
-              <span className="ml-2 text-2xl font-bold text-gray-900">JoltVolt</span>
+              <span className="ml-2 text-2xl font-bold text-gray-900">Kognyte</span>
             </Link>
             
             <div className="hidden md:block">
@@ -366,7 +366,7 @@ export default function ApplyPage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Why do you want to join JoltVolt?</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Why do you want to join Kognyte?</label>
                   <textarea
                     name="motivation"
                     value={formData.motivation}
@@ -468,7 +468,7 @@ export default function ApplyPage() {
 
         {/* Benefits Sidebar */}
         <div className="mt-8 bg-blue-50 rounded-lg p-6">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">Why Join JoltVolt?</h3>
+          <h3 className="text-lg font-semibold text-gray-900 mb-4">Why Join Kognyte?</h3>
           <div className="grid md:grid-cols-3 gap-4">
             <div className="flex items-start">
               <DollarSign className="h-5 w-5 text-green-600 mt-1 mr-2 flex-shrink-0" />

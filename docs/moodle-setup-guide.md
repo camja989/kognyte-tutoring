@@ -1,11 +1,11 @@
-# JoltVolt Moodle Setup Guide
+# Kognyte Moodle Setup Guide
 
 ## Step 1: Create MoodleCloud Instance
 
 1. **Go to MoodleCloud**: https://moodlecloud.com/
 2. **Create Free Trial**: 
-   - Site name: "joltvolt-hsfy"
-   - URL: https://joltvolt-hsfy.moodlecloud.com
+   - Site name: "kognyte-hsfy"
+   - URL: https://kognyte-hsfy.moodlecloud.com
    - Admin email: your-email@domain.com
 3. **Complete Setup**: Follow the registration process
 
@@ -36,16 +36,16 @@ For each course:
 - **Course format**: Topics format
 - **Visible**: Yes
 
-## Step 3: Add JoltVolt External Tool
+## Step 3: Add Kognyte External Tool
 
 ### 3.1 Configure External Tool
 1. Go to **Site Administration → Plugins → Activity modules → External tool**
 2. Click **Manage tools**
 3. Add new external tool:
    ```
-   Tool name: JoltVolt Question Bank
-   Tool URL: https://joltvolt-tutoring.netlify.app/api/lti/launch
-   Consumer key: joltvolt_hsfy_2024
+   Tool name: Kognyte Question Bank
+   Tool URL: https://kognyte-tutoring.netlify.app/api/lti/launch
+   Consumer key: kognyte_hsfy_2024
    Shared secret: [Generate secure secret]
    ```
 

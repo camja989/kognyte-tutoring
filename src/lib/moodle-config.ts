@@ -1,4 +1,4 @@
-// JoltVolt Moodle Configuration for FREE DigitalOcean Deployment
+// Kognyte Moodle Configuration for FREE DigitalOcean Deployment
 
 export const MOODLE_CONFIG = {
   // DigitalOcean droplet URL (update after deployment)
@@ -16,9 +16,9 @@ export const MOODLE_CONFIG = {
 
 // LTI Configuration for DigitalOcean Moodle
 export const LTI_CONFIG = {
-  consumerKey: 'joltvolt_hsfy_digitalocean_2024',
-  sharedSecret: 'joltvolt-do-secret-2024',
-  launchUrl: 'https://joltvolt-tutoring.netlify.app/api/lti/launch'
+  consumerKey: 'kognyte_hsfy_digitalocean_2024',
+  sharedSecret: 'kognyte-do-secret-2024',
+  launchUrl: 'https://kognyte-tutoring.netlify.app/api/lti/launch'
 }
 
 // Helper functions for Moodle redirections

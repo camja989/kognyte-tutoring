@@ -1,4 +1,4 @@
-# JoltVolt HSFY Learning Platform
+# Kognyte HSFY Learning Platform
 
 🎓 **FREE learning platform for University of Otago Health Sciences First Year students**
 
@@ -12,9 +12,9 @@
 
 ## 🚀 Live Platform
 
-- **Website**: https://joltvolt-tutoring.netlify.app
+- **Website**: https://kognyte-tutoring.netlify.app
 - **Moodle Platform**: Deploy FREE on DigitalOcean (see setup guide)
-- **GitHub Repository**: https://github.com/camja989/joltvolt-tutoring
+- **GitHub Repository**: https://github.com/camja989/kognyte-tutoring
 
 ## 📋 What This Platform Provides
 
@@ -35,8 +35,8 @@
 ## 🏗️ Architecture
 
 ```
-JoltVolt Website          DigitalOcean Moodle       Question Bank LTI
-(joltvolt-tutoring.       (your-droplet-ip)    →    (Integrated with
+Kognyte Website          DigitalOcean Moodle       Question Bank LTI
+(kognyte-tutoring.       (your-droplet-ip)    →    (Integrated with
  netlify.app)       →                                 website)
                                                           ↓
 Student Journey: Browse → Register in Moodle → Enroll in Course → Practice Questions → Track Progress
@@ -69,7 +69,7 @@ Follow the detailed guide: `docs/digitalocean-free-deployment.md`
 ## 📁 Project Structure
 
 ```
-joltvolt-tutoring/
+kognyte-tutoring/
 ├── src/
 │   ├── app/
 │   │   ├── page.tsx                          # Homepage with Moodle redirections
@@ -183,8 +183,8 @@ joltvolt-tutoring/
 
 ```bash
 # Clone the repository
-git clone https://github.com/camja989/joltvolt-tutoring.git
-cd joltvolt-tutoring
+git clone https://github.com/camja989/kognyte-tutoring.git
+cd kognyte-tutoring
 
 # Install dependencies
 npm install

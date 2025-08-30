@@ -1,4 +1,4 @@
-# JoltVolt HSFY Learning Platform - Implementation Complete
+# Kognyte HSFY Learning Platform - Implementation Complete
 
 ## 🎉 Implementation Status: READY TO DEPLOY
 
@@ -7,8 +7,8 @@ Your complete learning platform for University of Otago HSFY students is now ful
 ## 📋 What Has Been Built
 
 ### ✅ Core Website (Live)
-- **URL**: https://joltvolt-tutoring.netlify.app
-- **GitHub**: https://github.com/camja989/joltvolt-tutoring
+- **URL**: https://kognyte-tutoring.netlify.app
+- **GitHub**: https://github.com/camja989/kognyte-tutoring
 - **Status**: Deployed and functional
 - **Features**: Complete responsive website with Moodle integration
 
@@ -29,7 +29,7 @@ Your complete learning platform for University of Otago HSFY students is now ful
 ### 1. Create MoodleCloud Instance (15 minutes)
 Follow the detailed guide in `docs/create-moodle-instance.md`:
 1. Sign up at https://moodlecloud.com
-2. Create site: `joltvolt-hsfy.moodlecloud.com`
+2. Create site: `kognyte-hsfy.moodlecloud.com`
 3. Follow the 10-phase setup guide
 
 ### 2. Update Configuration (5 minutes)
@@ -59,8 +59,8 @@ Once MoodleCloud is created, update `src/lib/moodle-config.ts` with actual cours
 ## 🏗️ Architecture Overview
 
 ```
-JoltVolt Website                 MoodleCloud               Question Bank
-(joltvolt-tutoring.netlify.app) → (joltvolt-hsfy.moodlecloud.com) → (LTI Integration)
+Kognyte Website                 MoodleCloud               Question Bank
+(kognyte-tutoring.netlify.app) → (kognyte-hsfy.moodlecloud.com) → (LTI Integration)
                                                          ↓
 User clicks "Try Demo" → Redirects to Moodle → Student enrolls → Launches questions → Grades sync back
 ```
@@ -68,7 +68,7 @@ User clicks "Try Demo" → Redirects to Moodle → Student enrolls → Launches 
 ## 📁 File Structure Summary
 
 ```
-joltvolt-tutoring/
+kognyte-tutoring/
 ├── src/
 │   ├── app/
 │   │   ├── page.tsx                 # Homepage with Moodle redirects
@@ -114,7 +114,7 @@ joltvolt-tutoring/
 
 ### Platform
 - **Hosting**: MoodleCloud (professional Moodle hosting)
-- **Domain**: Custom joltvolt-hsfy.moodlecloud.com
+- **Domain**: Custom kognyte-hsfy.moodlecloud.com
 - **SSL**: Automatic HTTPS encryption
 - **Backup**: MoodleCloud handles data backup and security
 
