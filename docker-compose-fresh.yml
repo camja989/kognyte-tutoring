@@ -14,7 +14,7 @@ services:
       - MOODLE_PASSWORD=Kognyte2025!
       - MOODLE_EMAIL=admin@kognyte.co.nz
       - MOODLE_SITE_NAME=Kognyte Premium HSFY Platform
-      - MOODLE_HOST=134.199.159.69
+      - MOODLE_HOST=209.38.23.129
     depends_on:
       - mariadb
     volumes:

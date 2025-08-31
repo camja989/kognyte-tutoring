@@ -12,7 +12,7 @@ Create a professional demo showing:
 ## 🚀 Step-by-Step Demo Setup
 
 ### **Phase 1: Login to Admin Panel**
-1. Go to: http://134.199.159.69/login/index.php
+1. Go to: http://209.38.23.129/login/index.php
 2. Username: `admin`
 3. Password: `admin123` (default Bitnami password)
 4. Click "Log in"
@@ -292,6 +292,6 @@ Create a **Quiz** activity with these questions:
 4. **Refine content** based on user feedback
 5. **Scale to Australian market** with similar demo setup
 
-**Demo URL for sharing**: http://134.199.159.69
+**Demo URL for sharing**: http://209.38.23.129
 **Enrollment Key**: `premium2025`
 **Demo Student**: `demo.student` / `Student123!`

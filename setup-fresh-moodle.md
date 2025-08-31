@@ -4,7 +4,7 @@ Since we're having admin login issues, let's create a fresh demo that will work 
 
 ## **Option A: Use Existing Moodle with New User Account**
 
-1. **Go to**: http://134.199.159.69
+1. **Go to**: http://209.38.23.129
 2. **Click "Create new account"** (if available)
 3. **Create account with these details**:
    - Username: `demolead`
@@ -86,5 +86,5 @@ For immediate demo purposes:
 
 Create a student account and show the enrollment flow - this demonstrates the key user experience that parents and co-founders care about!
 
-**Demo URL**: http://134.199.159.69
+**Demo URL**: http://209.38.23.129
 **Demo Account**: demolead / DemoLead123!

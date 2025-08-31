@@ -20,7 +20,7 @@ sleep 180
 echo "✅ Moodle should be ready!"
 echo ""
 echo "🎯 NEW ADMIN CREDENTIALS:"
-echo "URL: http://134.199.159.69/login/index.php"
+echo "URL: http://209.38.23.129/login/index.php"
 echo "Username: admin"
 echo "Password: Kognyte2025!"
 echo "Email: admin@kognyte.co.nz"

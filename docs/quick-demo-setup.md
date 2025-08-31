@@ -1,7 +1,7 @@
 # 🚀 Quick Demo Setup - 30 Minutes to Premium Demo
 
 ## **QUICK ACCESS CREDENTIALS**
-- **Moodle URL**: http://134.199.159.69
+- **Moodle URL**: http://209.38.23.129
 - **Admin Login**: `admin` / `admin123`
 - **Demo Student**: `demo.student` / `Student123!`
 - **Enrollment Key**: `premium2025`
@@ -11,7 +11,7 @@
 ## **⚡ 5-Step Quick Setup**
 
 ### **Step 1: Login as Admin (2 mins)**
-1. Go to http://134.199.159.69/login/index.php
+1. Go to http://209.38.23.129/login/index.php
 2. Login: `admin` / `admin123`
 
 ### **Step 2: Create Course Category (3 mins)**
@@ -181,5 +181,5 @@
 4. **Launch premium beta** with 20 paying families
 5. **Scale to Australian market**
 
-**🎯 Your demo URL**: http://134.199.159.69
+**🎯 Your demo URL**: http://209.38.23.129
 **💎 Ready to dominate the premium HSFY market!**

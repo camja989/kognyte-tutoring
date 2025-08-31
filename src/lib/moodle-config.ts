@@ -2,7 +2,7 @@
 
 export const MOODLE_CONFIG = {
   // DigitalOcean droplet URL (update after deployment)
-  moodleSiteUrl: "http://134.199.159.69",
+  moodleSiteUrl: "http://209.38.23.129",
   courses: {
     trial: '/course/view.php?id=2',     // FREE TRIAL course ID
     biol111: '/course/view.php?id=3',   // BIOL111 course ID  

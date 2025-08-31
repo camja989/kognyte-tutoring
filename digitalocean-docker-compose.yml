@@ -31,7 +31,7 @@ services:
       MOODLE_PASSWORD: Kognyte-Admin-2024!
       MOODLE_EMAIL: admin@kognyte.co.nz
       MOODLE_SITE_NAME: "Kognyte HSFY Learning Platform"
-      MOODLE_HOST: 134.199.159.69
+      MOODLE_HOST: 209.38.23.129
       MOODLE_REVERSEPROXY: "false"
       MOODLE_SSLPROXY: "false"
     volumes:
